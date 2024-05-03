@@ -41,6 +41,7 @@ Cette application est compatible `PHP5` et a été testée avec une base de donn
 - **Lancement avec Docker Compose**
     - ``docker-compose up -d``
         ![alt text](img/image.png)
+        
 - **arreter les conteneurs et les supprimer**
      - `docker-compose down`
 
