@@ -1,20 +1,15 @@
 version: '3.8'
 services:
   db:
-    build:
-      context: contextPath
-      dockerfile: DockerFile-Mysql
-    image: mysql:5.7
+    image: postgres:latest
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: gestion_produits
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-    ports:
-      - "3306:3306" 
+      POSTGRES_DB: gestion_produits
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
     volumes:
-      - db_data:/var/lib/mysql
-      - ./database/gestion_produits.sql:/docker-entrypoint-initdb.d/gestion_produits.sql 
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
   web:
     build:
       context: . 
@@ -25,11 +20,6 @@ services:
       - "80:80" 
     volumes:
       - ./www:/var/www/html
-    environment:
-      - MYSQL_HOST=db
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=password
-      - MYSQL_DATABASE=gestion_produits
-
+    
 volumes:
   db_data:
