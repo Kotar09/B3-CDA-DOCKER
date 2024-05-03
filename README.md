@@ -12,8 +12,8 @@
 
 ## 1 Conteneurisation l’application
 
-- ### Creation des fichiers DockerFile en suivant les instruction suivante :
-- ### Prérequis et Installation
+### Creation des fichiers DockerFile en suivant les instruction suivante :
+### Prérequis
 
 Cette application est compatible `PHP5` et a été testée avec une base de données `MySQL 5.7`.
 - Copier les fichiers du dossier `www` dans un dossier accessible par le serveur Web.
@@ -22,7 +22,7 @@ Cette application est compatible `PHP5` et a été testée avec une base de donn
 - Connectez vous à l'application avec l'url adaptée avec les informations suivantes :
     - Login : `admin`
     - Mot de passe : `password`
-
+### Installation
 - On execute les conteneurs avec les commandes suivantes :
 
     - `docker build -f DockerFile -t application-php:latest .`
@@ -40,7 +40,9 @@ Cette application est compatible `PHP5` et a été testée avec une base de donn
 - Création du fichier ``docker-compose.yml``
 - **Lancement avec Docker Compose**
     - ``docker-compose up -d``
-### Aller dans le dossier database et construire l'image MySQL
+- **arreter les conteneurs et les supprimer**
+     - `docker-compose down`
+
 
 ## 3 Version de dev : forme: mise à jour de la plate-forme
 
