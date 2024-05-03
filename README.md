@@ -40,10 +40,24 @@ Cette application est compatible `PHP5` et a été testée avec une base de donn
 - Création du fichier ``docker-compose.yml``
 - **Lancement avec Docker Compose**
     - ``docker-compose up -d``
+        ![alt text](img\image.png)
 - **arreter les conteneurs et les supprimer**
      - `docker-compose down`
 
-
 ## 3 Version de dev : forme: mise à jour de la plate-forme
+- ``git branch dev`` 
+- ``git checkout dev``
+### Modification des fichiers DockerFile
+- Creation d'une version à  :
+    - `docker build -f DockerFile-t application-php8:latest .`
 
+    - `docker build -f DockerFile-Mysql -t application-mysql8:latest .`
+
+- Ensuite on lance les conteurs : 
+
+    - `docker run -d --name application-mysql8 application-mysql8:latest`
+
+    - `docker run -d --name application-php8 --link application-mysql8:db -p 80:80 application-php8:latest`
 ## 4 Branche PostgreSQL
+- ``git branch postgre-sql`` 
+- ``git checkout postgre-sql``
