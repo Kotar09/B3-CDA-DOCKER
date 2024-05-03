@@ -4,7 +4,6 @@ services:
     build:
       context: contextPath
       dockerfile: DockerFile-Mysql
-    image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: gestion_produits
