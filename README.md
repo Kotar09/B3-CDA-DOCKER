@@ -47,6 +47,7 @@ Cette application est compatible `PHP5` et a été testée avec une base de donn
      - `docker-compose down`
 
 ## 3 Version de dev : forme: mise à jour de la plate-forme
+
 - ``git branch dev`` 
 - ``git checkout dev``
 ### Modification des fichiers DockerFile
@@ -60,6 +61,16 @@ Cette application est compatible `PHP5` et a été testée avec une base de donn
     - `docker run -d --name application-mysql8 application-mysql8:latest`
 
     - `docker run -d --name application-php8 --link application-mysql8:db -p 80:80 application-php8:latest`
+
 ## 4 Branche PostgreSQL
+
 - ``git branch postgre-sql`` 
 - ``git checkout postgre-sql``
+### Creation du fichier DockerFile-postgre
+
+- **Lancement avec Docker Compose**
+- ``docker-compose build``
+- ``docker-compose up -d``
+
+- **arreter les conteneurs et les supprimer**
+     - `docker-compose down`
