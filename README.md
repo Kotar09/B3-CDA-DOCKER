@@ -66,7 +66,10 @@ Cette application est compatible `PHP5` et a été testée avec une base de donn
 
 - ``git branch postgre-sql`` 
 - ``git checkout postgre-sql``
-### Creation du fichier DockerFile-postgre
+- ### On effectue les modifications suivante :
+    - du fichier **docker-compose.yml**
+    - du fichier **connect.php**
+    - du fichier **auth.php**
 
 - **Lancement avec Docker Compose**
 - ``docker-compose build``
